@@ -1,0 +1,25 @@
+.login-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 300px;
+  }
+  
+  input {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .google-login {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+  }
+  

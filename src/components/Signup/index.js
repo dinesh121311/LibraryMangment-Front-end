@@ -15,7 +15,7 @@ function Signup() {
     console.log('Register Payload:', payload);
     
     try {
-      const response = await axios.post('http://192.168.1.172:5001/api/auth/register', payload, {
+      const response = await axios.post('http://localhost:5001/api/auth/register', payload, {
         headers: {
           'Content-Type': 'application/json',
         },

@@ -14,7 +14,7 @@ function Login() {
     const payload = { email, password };
     console.log('Login Payload:', payload);
     try {
-      const response = await axios.post('http://192.168.1.172:5001/api/auth/login', payload, {
+      const response = await axios.post('http://localhost:5001/api/auth/login', payload, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -34,14 +34,11 @@ function Login() {
     const queryParams = new URLSearchParams(window.location.search);
     const token = queryParams.get('token');
     const user = queryParams.get('user');
-
+      console.log(user, "User regsited via oauth");
     if (token && user) {
-      // Store the token and user data in cookies/localStorage
       Cookies.set('jwtToken', token, { expires: 7 });
       localStorage.setItem('user', user);
-
-      // Redirect to the home page after successful login
-      navigate('/home');
+           navigate('/home');
     }
   }, [navigate]);
 
@@ -63,7 +60,7 @@ function Login() {
       <button onClick={handleLogin}>Login</button>
       
       {/* Redirect user to Google OAuth */}
-      <a href="http://192.168.1.172:5001/api/auth/google" className="google-login">
+      <a href="http://localhost:5001/api/auth/google" className="google-login">
         Sign in with Google
       </a>
 
@@ -75,3 +72,4 @@ function Login() {
 }
 
 export default Login;
+

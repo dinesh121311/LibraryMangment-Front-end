@@ -23,7 +23,7 @@ function Login() {
 
       const token = response.data.token;
       Cookies.set('jwtToken', token, { expires: 7 });
-      navigate('/home');
+      navigate('/books');
     } catch (error) {
       console.error('Login Failed:', error.response ? error.response.data : error.message);
     }

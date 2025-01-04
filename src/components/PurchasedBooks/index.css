@@ -1,0 +1,53 @@
+.purchased-books-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+.page-title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.book-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: white;
+}
+
+.book-image {
+  object-fit: cover;
+}
+
+.book-content {
+  padding: 16px;
+}
+
+.book-title {
+  font-weight: 600;
+  color: #444;
+}
+
+.book-author,
+.book-price,
+.purchase-date {
+  font-size: 14px;
+  color: #666;
+}
+
+.page-divider {
+  margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .book-title {
+    font-size: 18px;
+  }
+
+  .book-author,
+  .book-price,
+  .purchase-date {
+    font-size: 12px;
+  }
+}

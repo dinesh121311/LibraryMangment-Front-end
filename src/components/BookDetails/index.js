@@ -15,6 +15,11 @@ const BookDetails = ({ books, reviews }) => {
     console.log({ rating, comment });
   };
 
+  const handlePurchase = () => {
+    // Logic to handle book purchase (e.g., navigating to a purchase page)
+    console.log('Purchase initiated for book:', book.title);
+  };
+
   return (
     <div className="book-details-container">
       <Card className="book-card">
@@ -34,6 +39,15 @@ const BookDetails = ({ books, reviews }) => {
             Rating: <Rating value={book.rating} readOnly />
           </Typography>
         </CardContent>
+        <Button
+          variant="contained"
+          color="primary"
+          className="purchase-btn"
+          onClick={handlePurchase}
+          style={{ margin: '10px' }}
+        >
+          Purchase Book
+        </Button>
       </Card>
 
       <Divider className="divider" />
@@ -52,10 +66,7 @@ const BookDetails = ({ books, reviews }) => {
 
         <Typography variant="h6" className="leave-review-title">Leave a Review</Typography>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <Rating value={rating} onChange={(e, newValue) => setRating(newValue)} className="review-rating" />
-          </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} sm={12}>
             <TextField
               label="Comment"
               multiline
@@ -67,7 +78,7 @@ const BookDetails = ({ books, reviews }) => {
             />
           </Grid>
         </Grid>
-        <Button variant="contained" className="submit-btn" onClick={handleSubmitReview}>Submit</Button>
+        <Button  style={{ margin: '10px' }} variant="contained" className="submit-btn" onClick={handleSubmitReview}>Submit</Button>
       </div>
     </div>
   );
